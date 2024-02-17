@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html style="height: 100%;">
+
+<head>
+	<link rel="stylesheet" type="text/css" href="/main.css">
+</head>
+
+<div class="menubar">
+	<img src="/img/icon.png" alt="Icon">
+	<ul>
+		<li><a href="/">Home</a></li>
+		<li><a href="/gaming">Gaming</a></li>
+		<li><a href="/purr">purr</a></li>
+	</ul>
+</div>
+
+<div class="middle">
+	<div class="track">
+		<img src="/trackimage/{{ .Title }}" alt="Track cover" height="90%">
+		<div class="track-name">{{ .Title }}</div>
+		<div class="track-description">{{ .Description }}</div>
+		<audio controls>
+			<source src="/tracksource/{{ .Title }}" type="audio/mpeg">
+		</audio>
+	</div>
+</div>
+</body>
+</html>
