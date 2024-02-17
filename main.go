@@ -109,10 +109,6 @@ func iconHandler(w http.ResponseWriter, r *http.Request) {
 	http.ServeFile(w, r, "pages/img/icon.png")
 }
 
-func coverHandler(w http.ResponseWriter, r *http.Request) {
-	http.ServeFile(w, r, "pages/img/cover.png")
-}
-
 func trackHandler(w http.ResponseWriter, r *http.Request) {
 	trackName := strings.TrimPrefix(r.URL.Path, "/track/")
 
@@ -166,7 +162,6 @@ func main() {
 	http.HandleFunc("/main.css", mainCSSHandler)
 
 	http.HandleFunc("/img/icon.png", iconHandler)
-	http.HandleFunc("/img/cover.png", coverHandler)
 
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }
