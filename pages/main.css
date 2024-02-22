@@ -28,6 +28,7 @@ a:hover{
 	text-decoration: underline;
 }
 
+
 .menubar{
 	display: flex;
 /*	height: 60px;*/
@@ -71,8 +72,12 @@ a:hover{
 	padding: 20px;
 }
 
+.middle label{
+	color: #9d9d9d;
+}
+
 .track{
-	height: 200px;
+	min-height: 200px;
 	outline: 3px solid var(--outlinecolor);
 	padding: 5px;
 	margin-bottom: 15px;
@@ -81,7 +86,8 @@ a:hover{
 
 .track img{
 	float: left;
-	height: 100%;
+/*	height: 100%;*/
+	height: 200px;
 	padding-right: 5px;
 }
 
@@ -92,4 +98,5 @@ a:hover{
 
 .track-description{
 	color: var(--trackdescriptioncolor);
+	font-size: 10pt;
 }

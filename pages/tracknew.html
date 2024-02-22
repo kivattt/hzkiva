@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html style="height: 100%;">
+
+<head>
+	<link rel="stylesheet" type="text/css" href="/main.css">
+</head>
+
+<div class="menubar">
+	<img src="/img/icon.png" alt="Icon">
+	<ul>
+		<li><a href="/">Home</a></li>
+		{{ if .LoggedIn }}
+			<li><a href="http://log:out@localhost:8080/">Logout</a></li>
+		{{ else }}
+			<li><a href="/login">Login</a></li>
+		{{ end }}
+	</ul>
+</div>
+
+<div class="middle">
+	<div class="track">
+		<div class="track-name">Create new track</div>
+
+		<form action="/tracknew" method="post">
+			<label for="title">Title</label><br>
+			<input type="text" id="title" required>
+			<br>
+			<br>
+
+			<label for="description">Description</label><br>
+			<input type="text" id="description" required>
+			<br>
+			<br>
+
+			<label for="audio">Audio</label><br>
+			<input type="file" id="audio" accept="audio/*" required>
+			<br>
+			<br>
+
+			<label for="cover">Cover image</label><br>
+			<input type="file" id="cover" accept="image/*" required>
+			<br>
+			<br>
+
+			<button type="submit">Publish</button>
+		</form>
+	</div>
+</div>
+</body>
+</html>

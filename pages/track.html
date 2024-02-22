@@ -10,18 +10,22 @@
 	<img src="/img/icon.png" alt="Icon">
 	<ul>
 		<li><a href="/">Home</a></li>
-		<li><a href="/gaming">Gaming</a></li>
-		<li><a href="/purr">purr</a></li>
+		{{ if .LoggedIn }}
+			<li><a href="/tracknew">New track</a></li>
+			<li><a href="http://log:out@localhost:8080/">Logout</a></li>
+		{{ else }}
+			<li><a href="/login">Login</a></li>
+		{{ end }}
 	</ul>
 </div>
 
 <div class="middle">
 	<div class="track">
-		<img src="/trackimage/{{ .Title }}" alt="Track cover" height="90%">
-		<div class="track-name">{{ .Title }}</div>
-		<div class="track-description">{{ .Description }}</div>
+		<img src="/trackimage/{{ .Track.Title }}" alt="Track cover" height="90%">
+		<div class="track-name">{{ .Track.Title }}</div>
+		<div class="track-description">{{ .Track.Description }}</div>
 		<audio controls>
-			<source src="/tracksource/{{ .Title }}" type="audio/mpeg">
+			<source src="/tracksource/{{ .Track.Title }}" type="audio/mpeg">
 		</audio>
 	</div>
 </div>
